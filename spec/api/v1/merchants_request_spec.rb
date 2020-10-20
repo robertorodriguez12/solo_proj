@@ -53,7 +53,7 @@ RSpec.describe 'MERCHANT API' do
     end
 
     it 'can create a new merchant' do
-        merchant_params = ({name: 'Wacky Daves'})
+        merchant_params = ({name: 'The Juan'})
         headers = {"CONTENT_TYPE" => "application/json"}
         post "/api/v1/merchants", headers: headers, params: JSON.generate(merchant_params)
 
@@ -68,7 +68,7 @@ RSpec.describe 'MERCHANT API' do
         id = create(:merchant).id
         previous_name = Merchant.last.name
 
-        merchant_params = { name: "Wacky Daves" }
+        merchant_params = { name: "Not The Juan" }
         headers = {"CONTENT_TYPE" => "application/json"}
         patch "/api/v1/merchants/#{id}", headers: headers, params: JSON.generate(merchant_params)
 
