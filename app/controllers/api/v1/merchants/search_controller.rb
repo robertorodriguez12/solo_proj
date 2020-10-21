@@ -12,4 +12,10 @@ class Api::V1::Merchants::SearchController < ApplicationController
         render json: MerchantSerializer.new(merchant)
       end 
     end
+
+    def most_revenue
+      # binding.pry
+      merchants = Merchant.most_revenue(params[:quantity])
+      render json: MerchantSerializer.new(merchants)
+    end 
 end 
