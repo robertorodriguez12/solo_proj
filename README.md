@@ -54,7 +54,7 @@
 
 ## Schema
 
-    ![Schema}(https://app.lucidchart.com/publicSegments/view/a967f0a2-86fe-4bf7-b5ad-3ed056ec7e71/image.jpeg)]
+    ![Schema](https://app.lucidchart.com/publicSegments/view/a967f0a2-86fe-4bf7-b5ad-3ed056ec7e71/image.jpeg)]
 
 
 
