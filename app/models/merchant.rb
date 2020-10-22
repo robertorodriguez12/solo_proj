@@ -11,8 +11,8 @@ class Merchant < ApplicationRecord
     end
 
     def self.most_revenue(quantity)
-        # binding.pry
-        joins(:transactions).select("items.id, items.name, sum(invoice_items.unit_price * invoice_items.quantity) as revenue").where("invoices.status='shipped' AND transactions.result='success'").group("merchant.id").order("revenue DESC").limit(quantity)
+        self.select("merchants.*, sum(quantity * unit_price) as revenue").joins(invoices: [:invoice_items, :transactions]).where("transactions.result='success' AND invoices.status='shipped'").group("merchants.id").order("revenue DESC").limit(quantity)
     end 
-    #  going to need transactions(successful), limit by quantity, order by most revenue descending
 end
+
+
