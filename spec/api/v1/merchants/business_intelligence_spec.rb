@@ -39,8 +39,15 @@ RSpec.describe 'BUSINESS INTELLIGENCE' do
 
         end
     
-        xit 'can get revenue between two dates' do
-            
+        it 'can get revenue between two dates' do
+            get "/api/v1/revenue?start=#{Time.now.strftime("%Y-%m-%d")}&end=#{Time.now.strftime("%Y-%m-%d")}"
+            expect(response).to be_successful
+            json = JSON(response.body, symbolize_names: true)
+
+            expect(json[:data]).to be_a(Hash)
+            expect(json[:data][:id]).to eq("null")
+            expect(json[:data][:attributes]).to be_a(Hash)
+            expect(json[:data][:attributes][:revenue]).to eq(28.6)
         end
     end
 end 
