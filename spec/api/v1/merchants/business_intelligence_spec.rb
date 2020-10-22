@@ -26,7 +26,7 @@ RSpec.describe 'BUSINESS INTELLIGENCE' do
             json = JSON.parse(response.body, symbolize_names: true)
             merchants = json[:data]
 
-            expect(merchants.first).to eq(merchant2)
+            expect(merchants[0][:attributes][:name]).to eq("The Juan")
         end
     
         xit 'can get merchants who have sold the most items' do
