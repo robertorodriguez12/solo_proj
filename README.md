@@ -1,8 +1,5 @@
 # README
 
-<div style="background: grey;">
-
-## Project Scope
 
 ### Overview
     * This Solo Project is my take on Rails Engine from Turing Mod 3. The point of this project is to demonstrate the ability of creating API endpoints and importing pre-existing CSV data into our database. 
@@ -48,9 +45,6 @@
     * Items
     * Merchants
     * Transactions
-
-</div>
-<br>
 
 ## Schema
 
